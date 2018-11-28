@@ -1,23 +1,24 @@
-#»ùÓÚcentos¾µÏñ
+#åŸºäºcentosé•œåƒ
 FROM centos:6
 
-#Î¬»¤ÈËµÄĞÅÏ¢
+#ç»´æŠ¤äººçš„ä¿¡æ¯
 MAINTAINER jackchow "jack_chow621@sina.com"
 
-#°²×°httpdÈí¼ş°ü
+#å®‰è£…httpdè½¯ä»¶åŒ…
 RUN yum -y update && \
     yum -y install httpd
 
-#¿ªÆô80¶Ë¿Ú
+#å¼€å¯80ç«¯å£
 EXPOSE 80
 
-#¸´ÖÆÍøÕ¾Ê×Ò³ÎÄ¼şÖÁ¾µÏñÖĞwebÕ¾µãÏÂ
-ADD index.html /var/www/html/index.html
+#å¤åˆ¶ç½‘ç«™é¦–é¡µæ–‡ä»¶è‡³é•œåƒä¸­webç«™ç‚¹ä¸‹
+#ADD index.html /var/www/html/index.html
+ADD index.html /index.html
 
-#¸´ÖÆ¸Ã½Å±¾ÖÁ¾µÏñÖĞ£¬²¢ĞŞ¸ÄÆäÈ¨ÏŞ
+#å¤åˆ¶è¯¥è„šæœ¬è‡³é•œåƒä¸­ï¼Œå¹¶ä¿®æ”¹å…¶æƒé™
 ADD run.sh /run.sh
 
 RUN chmod 775 /run.sh
 
-#µ±Æô¶¯ÈİÆ÷Ê±Ö´ĞĞµÄ½Å±¾ÎÄ¼ş
+#å½“å¯åŠ¨å®¹å™¨æ—¶æ‰§è¡Œçš„è„šæœ¬æ–‡ä»¶
 CMD ["/run.sh"]

@@ -12,8 +12,8 @@ RUN yum -y update && \
 EXPOSE 80
 
 #复制网站首页文件至镜像中web站点下
-#ADD index.html /var/www/html/index.html
-ADD index.html /index.html
+ADD index.html /var/www/html/index.html
+#ADD index.html /index.html
 
 #复制该脚本至镜像中，并修改其权限
 ADD run.sh /run.sh
